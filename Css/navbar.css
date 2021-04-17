@@ -1,0 +1,26 @@
+body {
+  font-family: 'Hind', sans-serif;
+  background: #1c1313;
+}
+
+body > div.nav-1 > ul  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body > div.nav-1 > ul > li {
+  float: left;
+}
+
+body > div.nav-1 > ul > li a
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+body > div.nav-1 {
+  background-color: #4CAF50;
+}
