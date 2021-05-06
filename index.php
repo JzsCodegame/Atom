@@ -1,23 +1,18 @@
 <?php
-require "header.php";
-?>
+include_once  'header.php';
+ ?>
 
-<main>
-  <div class="wrapper-main">
-    <section class="section-default">
-      <?php
-        if (isset($_SESSION['userId'])) {
-        echo '<p class="login-status">You are now Logged In!</p>';
-      }
-        else {
-        echo '<p class="login-status">You are now Logged Out!</p>';
-      }
-       ?>
+    <section class="index-intro">
+        <h1> This is an intro </h1>
+          <p> This is an Paragraph </p>
+        </section>
 
+  <section class="index-categories">
+    <h2> Some Basic categories </h2>
   </section>
-</div>
-</main>
+
+
 
 <?php
-require "footer.php";
+include_once  'footer.php';
 ?>
