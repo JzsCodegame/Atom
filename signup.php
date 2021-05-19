@@ -12,6 +12,8 @@ include_once 'header.php';
          <input type="text"  name="mail" placeholder="E-mail..">
           <input type="password"  name="pwd" placeholder="Password..">
            <input type="password"  name="pwd-repeat" placeholder="Repeat-password">
+           <input type="password"  name="pwd-repeat" placeholder="Repeat-password">
+           <input id="zip" name="zip" type="text" pattern="[0-9]*" placeholder="zipcode">
            <button type="submit"  class="buttongroup1" name="submit">SignUp</button>
               </form>
                   </div>
