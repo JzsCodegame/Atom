@@ -1,15 +1,39 @@
 <?php
-if (isset($_POST['signup-submit'])) {
-require 'dbh2.inc.php';
+if (isset($_POST["submit"])) {
+  echo "it-works"; }
 
-$username = $_POST['uid'];
-$email = $_POST['mail'];
-$password = $_POST['pwd'];
-$passwordRepeat = $_POST['pwd-repeat'];
 
-if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
-  header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
+
+$name = $_POST["name"];
+$email = $_POST["email"];
+$username = $_POST["uid"];
+$pwd = $_POST["pwd"];
+$pwdRepeat = $_POST["pwdrepeat"];
+$zipcode = $_POST["zipcode"];
+
+require_once 'dbh2.inc.php';
+require_once 'functions.inc.php';
+if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat, $zipcode) !== false) {
+  header("Location: ../signup.php?error=invaliduid");
   exit();
+}
+if (invalidUid($username) !== false) {
+  header("Location: ../signup.php?error=emptyinput");
+  exit();
+}
+if (invalidEmail($email) !== false) {
+  header("Location: ../signup.php?error=invalidemail");
+  exit();
+}
+if (pwdMatch($pwd, $pwdRepeat) !== false) {
+  header("Location: ../signup.php?error=passwordsdontmatch");
+  exit();
+}
+if (uidExists($conn, $username) !== false) {
+  header("Location: ../signup.php?error=usernametaken");
+  exit();
+}
+createUser($conn, $name, $email, $username, $pwd, $zipcode);
 }
 else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
   header("Location: ../signup.php?error=invalidmail&uid");
@@ -22,6 +46,10 @@ else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
     header("Location: ../signup.php?error=invaliduid&mail=".$email);
     exit();
+}
+else if ($password !== $passwordRepeat) {
+  header("Location: ../signup.php?error=passwordcheck&uid=".$username."&mail=".$email);
+  exit();
 }
 else if ($password !== $passwordRepeat) {
   header("Location: ../signup.php?error=passwordcheck&uid=".$username."&mail=".$email);

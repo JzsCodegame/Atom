@@ -6,7 +6,7 @@ include_once 'header.php';
 <h2>Login </h2>
 
 <div class="signup-form-form" >
-      <form action="login.inc.php" method="post">
+      <form action="includes/login.inc.php" method="post">
 
         <input type="text"  name="uid" placeholder="Username..">
 
