@@ -8,7 +8,8 @@ include_once  'header.php';
         </section>
 
   <section class="index-categories">
-    <h2> Some Basic categories </h2>
+    <h2> Bucket List to Locations </h2>
+    <img src="img/travelon.jpg" alt="Somewhere in China">
   </section>
 
 
