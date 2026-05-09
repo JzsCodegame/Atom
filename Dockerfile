@@ -4,8 +4,7 @@ WORKDIR /var/www/html
 
 RUN docker-php-ext-install mysqli
 
-COPY *.php *.css /var/www/html/
-COPY includes Css img /var/www/html/
+COPY *.php *.css includes/ Css/ img/ /var/www/html/
 COPY docker/start.sh /usr/local/bin/start.sh
 
 RUN chmod +x /usr/local/bin/start.sh
