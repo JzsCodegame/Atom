@@ -1,9 +1,18 @@
-FROM php:8.2-cli-alpine
+FROM php:8.2-apache
 
-WORKDIR /app
+WORKDIR /var/www/html
 
-COPY . /app
+RUN docker-php-ext-install mysqli
+
+COPY *.php /var/www/html/
+COPY includes /var/www/html/includes
+COPY Css /var/www/html/Css
+COPY img /var/www/html/img
+COPY automation_playground.css /var/www/html/automation_playground.css
+COPY docker/start.sh /usr/local/bin/start.sh
+
+RUN chmod +x /usr/local/bin/start.sh
 
 EXPOSE 10000
 
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-10000} -t /app"]
+CMD ["start.sh"]
