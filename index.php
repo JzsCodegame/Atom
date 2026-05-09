@@ -4,4 +4,4 @@
 <p>Deterministic modules for Selenium validation.</p>
 <div class="card-grid">
 <?php $mods=["signup","actions","alerts","datepicker","upload","windows","tables","visual"]; foreach($mods as $m){echo "<div class='card' id='card-$m' data-testid='card-$m'><h3>$m</h3><p>ID Prefix: $m-*</p><a class='btn' id='open-$m' data-testid='open-$m' href='/$m.php'>Open module</a></div>";} ?>
-</div></div></body></html>
+<div class='card' id='card-guide' data-testid='card-guide'><h3>guide</h3><p>ID Prefix: guide-*</p><a class='btn' id='open-guide' data-testid='open-guide' href='/guide.php'>Open module</a></div></div></div></body></html>
