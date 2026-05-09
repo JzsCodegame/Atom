@@ -4,11 +4,8 @@ WORKDIR /var/www/html
 
 RUN docker-php-ext-install mysqli
 
-COPY *.php /var/www/html/
-COPY includes /var/www/html/includes
-COPY Css /var/www/html/Css
-COPY img /var/www/html/img
-COPY automation_playground.css /var/www/html/automation_playground.css
+COPY *.php *.css /var/www/html/
+COPY includes Css img /var/www/html/
 COPY docker/start.sh /usr/local/bin/start.sh
 
 RUN chmod +x /usr/local/bin/start.sh
