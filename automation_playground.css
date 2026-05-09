@@ -1,0 +1,18 @@
+:root{font-family:Arial,sans-serif;color:#1f2937}
+body{margin:0;background:#f3f4f6}
+.container{max-width:1000px;margin:0 auto;padding:24px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #d1d5db;border-radius:8px;padding:16px}
+.btn{background:#2563eb;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.btn.secondary{background:#6b7280}
+.panel{background:#fff;border:1px solid #d1d5db;border-radius:8px;padding:16px;margin-bottom:16px}
+label{display:block;margin:8px 0 4px}
+input,select,textarea{width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:4px}
+.inline{display:flex;gap:10px;align-items:center}
+.inline input{width:auto}
+.result{margin-top:12px;padding:10px;background:#ecfeff;border:1px solid #67e8f9}
+table{width:100%;border-collapse:collapse}th,td{border:1px solid #cbd5e1;padding:8px;text-align:left}
+.nav a{margin-right:10px}
+.hidden{display:none}
+.logo-block{width:240px;height:120px;background:linear-gradient(45deg,#22c55e,#0ea5e9);border-radius:10px}
+.logo-block.diff{filter:hue-rotate(90deg)}
